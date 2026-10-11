@@ -19,29 +19,3 @@ const journalInfo = {
     copy: "The largest journal: grubs, abilities, spells, upgrades, collectibles, NPCs and more."
   }
 };
-
-const notice = document.querySelector("#journal-notice");
-const noticeTitle = document.querySelector("#notice-title");
-const noticeCopy = document.querySelector("#notice-copy");
-
-document.querySelectorAll(".journal").forEach((journal) => {
-  journal.addEventListener("click", () => {
-    const entry = journalInfo[journal.dataset.journal];
-
-    if (!entry) return;
-
-    noticeTitle.textContent = entry.title;
-    noticeCopy.textContent = entry.copy;
-    notice.showModal();
-  });
-});
-
-document.querySelector(".notice-close").addEventListener("click", () => {
-  notice.close();
-});
-
-notice.addEventListener("click", (event) => {
-  if (event.target === notice) {
-    notice.close();
-  }
-});
