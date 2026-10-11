@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Special+Elite&display=swap');
 
 :root {
-  --ink: #f1f0eb;
-  --muted: #a7a7a1;
-  --paper: #faf9f5;
+  --ink: #24241f;
+  --muted: #77766e;
+  --background: #f5f4ef;
+  --paper-hunter: #f0dede;
+  --paper-cartographer: #dce9df;
+  --paper-charms: #e2e0f1;
+  --paper-traveller: #f0e5c9;
   --cover-ink: #22221f;
 }
 
@@ -15,7 +19,11 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  background: radial-gradient(ellipse at center, #202020, #101010 75%);
+  background: radial-gradient(
+    ellipse at 50% 38%,
+    #ffffff 0%,
+    var(--background) 72%
+  );
   font-family: "Special Elite", "Courier New", monospace;
 }
 
@@ -46,14 +54,17 @@ h1 {
   font-family: "IM Fell English", Georgia, serif;
   font-size: clamp(34px, 4.2vw, 58px);
   font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .intro {
-  margin-top: 15px;
-  color: #aaa9a3;
+  margin: 15px 0 0;
+  color: #77766e;
   font-size: 12px;
+  letter-spacing: 0.4px;
 }
 
+/* Four journals in one horizontal row */
 .journal-shelf {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -64,7 +75,6 @@ h1 {
 }
 
 .journal {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,24 +87,31 @@ h1 {
   -webkit-tap-highlight-color: transparent;
 }
 
-.cover {
+/* The book and binding move together */
+.book {
   position: relative;
+  display: block;
+  width: min(100%, 220px);
+  aspect-ratio: 0.69;
+  transform: rotate(-20deg);
+  transform-origin: 50% 58%;
+  transition: transform 220ms ease, filter 220ms ease;
+  filter: drop-shadow(5px 8px 5px #0002);
+}
+
+.cover {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: min(100%, 220px);
-  aspect-ratio: 0.69;
   padding: 23px 12px 19px 20px;
+  overflow: hidden;
   color: var(--cover-ink);
-  background: var(--paper);
-  border: 1px solid #d1d0c9;
+  border: 1px solid #bcbab1;
   border-radius: 2px 5px 5px 2px;
-  box-shadow: 5px 6px 0 #0008, 9px 12px 22px #0005,
-    inset 5px 0 0 #e5e4dd;
-  transform: rotate(-20deg);
-  transform-origin: 50% 58%;
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  box-shadow: inset 5px 0 0 #00000008;
 }
 
 .cover::before {
@@ -104,17 +121,35 @@ h1 {
   bottom: 0;
   left: 14px;
   width: 1px;
-  background: #d0cfc7;
+  background: #00000024;
+}
+
+/* Different cover colours */
+.journal-hunter .cover {
+  background: var(--paper-hunter);
+}
+
+.journal-cartographer .cover {
+  background: var(--paper-cartographer);
+}
+
+.journal-charms .cover {
+  background: var(--paper-charms);
+}
+
+.journal-traveller .cover {
+  background: var(--paper-traveller);
 }
 
 .volume {
   align-self: flex-end;
-  font-size: 10px;
+  font-size: clamp(8px, 0.75vw, 10px);
   letter-spacing: 1.5px;
   color: #6f6e67;
 }
 
 .cover-title {
+  display: block;
   width: 100%;
   font-family: "IM Fell English", Georgia, serif;
   font-size: clamp(17px, 1.7vw, 25px);
@@ -130,43 +165,45 @@ h1 {
 
 .cover-mark {
   font-family: Georgia, serif;
-  font-size: 19px;
+  font-size: 22px;
+  line-height: 1;
 }
 
+/* Binding is inside the same moving book container */
 .spiral {
   position: absolute;
   z-index: 2;
-  top: 10%;
-  bottom: 19%;
-  left: 8px;
-  width: 13px;
+  top: 8%;
+  bottom: 8%;
+  left: -5px;
+  width: 15px;
   background: repeating-linear-gradient(
     to bottom,
-    transparent 0 10px,
-    #242424 10px 12px,
-    transparent 12px 19px
+    transparent 0 9px,
+    #3a3934 9px 11px,
+    transparent 11px 18px
   );
   filter: drop-shadow(1px 0 0 #777);
   pointer-events: none;
-  transform: rotate(-20deg);
 }
 
 .journal-caption {
   margin-top: 36px;
-  color: #d6d5cf;
-  font-size: 12px;
+  color: #55544e;
+  font-size: clamp(9px, 0.9vw, 12px);
+  line-height: 1.5;
   text-align: center;
+  letter-spacing: 0.3px;
 }
 
-.journal:hover .cover,
-.journal:focus-visible .cover {
+.journal:hover .book,
+.journal:focus-visible .book {
   transform: rotate(-14deg) translateY(-7px);
-  box-shadow: 7px 10px 0 #0008, 12px 17px 28px #0007,
-    inset 5px 0 0 #e5e4dd;
+  filter: drop-shadow(7px 13px 7px #0002);
 }
 
 .journal:focus-visible {
-  outline: 1px dashed #aaa;
+  outline: 1px dashed #777;
   outline-offset: 12px;
 }
 
@@ -176,7 +213,7 @@ h1 {
   align-items: center;
   gap: 13px;
   margin-top: 80px;
-  color: #777771;
+  color: #77766e;
   font-size: 9px;
   letter-spacing: 2px;
 }
@@ -185,17 +222,18 @@ h1 {
   color: #aaa;
 }
 
+/* Clicked journal message */
 .notice {
   width: min(420px, calc(100% - 32px));
   padding: 34px;
   color: #22221f;
-  background: var(--paper);
+  background: #fffefa;
   border: 1px solid #222;
-  box-shadow: 0 20px 80px #0009;
+  box-shadow: 0 20px 80px #0003;
 }
 
 .notice::backdrop {
-  background: #000a;
+  background: #0006;
 }
 
 .notice h2 {
@@ -244,10 +282,15 @@ h1 {
 
   .volume {
     font-size: 7px;
+    letter-spacing: 0.5px;
+  }
+
+  .cover-mark {
+    font-size: 18px;
   }
 
   .spiral {
-    width: 8px;
+    width: 10px;
   }
 
   .journal-caption {
@@ -270,6 +313,10 @@ h1 {
 
   .journal-shelf {
     gap: 8px;
+  }
+
+  .cover {
+    padding-top: 12px;
   }
 
   .cover-title {
