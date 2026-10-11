@@ -1,0 +1,780 @@
+/* =========================================
+   HALLOWNEST ARCHIVE — CHARM COMPENDIUM
+   Open sketchbook / pure white paper
+   ========================================= */
+
+:root {
+  --paper: #ffffff;
+  --ink: #171717;
+  --muted: #686868;
+  --line: #d0d0d0;
+  --soft-line: #e8e8e8;
+  --pink: #f3dce4;
+  --blue: #dceaf4;
+  --yellow: #f5edcf;
+  --green: #dcecdf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  padding: 9px 13px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #f2f2f2;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =========================================
+   HEADER AND INTRODUCTION
+   ========================================= */
+
+.site-header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px clamp(18px, 4vw, 48px);
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.topline a {
+  text-decoration: none;
+}
+
+.topline a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  padding: 45px 0 20px;
+}
+
+.hero h1 {
+  margin: 0 0 24px;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: normal;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.hero p {
+  max-width: 660px;
+  color: #444444;
+}
+
+.handnote {
+  display: inline-block;
+  padding: 0 5px;
+  border-bottom: 1px solid var(--ink);
+  font-style: italic;
+  transform: rotate(-1deg);
+}
+
+/* =========================================
+   CONTENTS AND INTRODUCTION
+   ========================================= */
+
+.contents {
+  margin: 25px 0;
+  padding: 16px 22px;
+  border: 1px solid var(--ink);
+}
+
+.contents ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+  padding-left: 20px;
+}
+
+.contents a {
+  text-decoration-thickness: 1px;
+}
+
+.intro-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(18px, 4vw, 48px);
+}
+
+.intro-section h2 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.note {
+  margin: 20px 0;
+  padding: 12px 17px;
+  border-left: 3px solid var(--ink);
+  background: #fafafa;
+}
+
+/* =========================================
+   SEARCH AND FILTERS
+   ========================================= */
+
+.tools {
+  max-width: 1100px;
+  margin: 25px auto;
+  padding: 0 clamp(18px, 4vw, 48px);
+}
+
+.tools h2 {
+  margin: 0 0 18px;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.tools input,
+.tools select {
+  min-width: 170px;
+  max-width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.tools input:focus,
+.tools select:focus,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #777777;
+  outline-offset: 3px;
+}
+
+.search-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 0 clamp(18px, 4vw, 48px);
+}
+
+.search-navigation p {
+  flex: 1;
+  margin: 0;
+  color: var(--muted);
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+#count {
+  margin-top: 10px;
+  color: var(--muted);
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   BOOK CONTAINER
+   ========================================= */
+
+#entries {
+  max-width: 1200px;
+  margin: 30px auto 70px;
+  padding: 0 22px;
+}
+
+.book-spread {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0;
+  max-width: 1080px;
+  margin: 0 auto 45px;
+  padding: 16px;
+  border: 1px solid #222222;
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow:
+    0 2px 0 #bcbcbc,
+    0 5px 0 #ededed,
+    0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Central binding shadow */
+
+.book-spread::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 16px;
+  bottom: 16px;
+  left: 50%;
+  width: 1px;
+  background: #222222;
+  box-shadow:
+    -3px 0 0 rgba(0, 0, 0, 0.04),
+    3px 0 0 rgba(0, 0, 0, 0.04);
+  pointer-events: none;
+}
+
+/* =========================================
+   LEFT PAGE — CHARM ENTRY
+   ========================================= */
+
+.charm-page {
+  --page-accent: #ffffff;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 700px;
+  margin: 0;
+  padding: 34px 30px 25px;
+  overflow: hidden;
+  border: 1px solid #d0d0d0;
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+  background: var(--paper);
+  box-shadow: inset -9px 0 12px -12px #222222;
+}
+
+/* Subtle, alternating ink accents */
+
+.charm-page:nth-child(1) {
+  --page-accent: var(--pink);
+}
+
+.charm-page:nth-child(1) .charm-icon {
+  transform: rotate(-2deg);
+}
+
+.charm-page .charm-icon {
+  transform: rotate(-2deg);
+}
+
+.charm-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink);
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.charm-entry {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 28px 0 18px;
+}
+
+.charm-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  margin-bottom: 25px;
+}
+
+.charm-icon {
+  display: block;
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  padding: 4px;
+  border: 1px dashed #aaaaaa;
+  background: #ffffff;
+  object-fit: contain;
+}
+
+.charm-title-block {
+  flex: 1;
+  min-width: 0;
+}
+
+.charm-title {
+  margin: 0 0 12px;
+  font-size: clamp(1.65rem, 3vw, 2.45rem);
+  font-weight: normal;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
+}
+
+.charm-cost {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* Charm effect */
+
+.charm-effect {
+  margin-bottom: 21px;
+  padding: 13px 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid #aaaaaa;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.charm-effect strong {
+  font-weight: normal;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 3px;
+}
+
+/* Journal sections */
+
+.field-section {
+  margin: 0 0 19px;
+  font-size: 0.91rem;
+  line-height: 1.65;
+}
+
+.field-section h3 {
+  margin: 0 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed #aaaaaa;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.field-section p {
+  margin: 6px 0 0;
+}
+
+/* Location and cost tags */
+
+.field-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid #aaaaaa;
+  border-radius: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+}
+
+/* Handwritten footer note */
+
+.field-note {
+  margin-top: auto;
+  padding: 15px 0 5px;
+  color: #555555;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Page footer */
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 9px;
+  border-top: 1px solid #aaaaaa;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   RIGHT PAGE — BLANK MAP SHEET
+   ========================================= */
+
+.map-page {
+  position: relative;
+  min-width: 0;
+  min-height: 700px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #d0d0d0;
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+  background: #ffffff;
+  box-shadow: inset 9px 0 12px -12px #222222;
+}
+
+.map-page img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+  border: none;
+  background: #ffffff;
+  object-fit: contain;
+}
+
+/* =========================================
+   END NOTE
+   ========================================= */
+
+.end-note {
+  max-width: 1100px;
+  margin: 25px auto;
+  padding: 20px clamp(18px, 4vw, 48px);
+  border-top: 1px solid var(--ink);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   TABLET AND MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+  .site-header {
+    padding: 18px;
+  }
+
+  .topline {
+    align-items: flex-start;
+    font-size: 9px;
+  }
+
+  .hero {
+    padding-top: 32px;
+  }
+
+  .contents {
+    padding: 13px 16px;
+  }
+
+  .tools-row {
+    align-items: stretch;
+  }
+
+  .tools input,
+  .tools select {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  #entries {
+    margin-top: 18px;
+    padding: 0 8px;
+  }
+
+  .book-spread {
+    padding: 7px;
+    margin-bottom: 28px;
+  }
+
+  .charm-page,
+  .map-page {
+    min-height: 590px;
+  }
+
+  .charm-page {
+    padding: 20px 12px;
+  }
+
+  .charm-topline {
+    align-items: flex-start;
+    font-size: 7px;
+    letter-spacing: 0.04em;
+  }
+
+  .charm-entry {
+    padding: 20px 0 14px;
+  }
+
+  .charm-heading {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .charm-icon {
+    flex-basis: 56px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .charm-title {
+    font-size: 1.35rem;
+  }
+
+  .charm-cost {
+    font-size: 8px;
+    letter-spacing: 0;
+  }
+
+  .charm-effect {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .field-section {
+    margin-bottom: 15px;
+    font-size: 0.79rem;
+    line-height: 1.5;
+  }
+
+  .field-section h3 {
+    font-size: 0.87rem;
+  }
+
+  .tag {
+    font-size: 8px;
+    padding: 2px 5px;
+  }
+
+  .field-note {
+    font-size: 0.75rem;
+  }
+
+  .page-footer {
+    font-size: 7px;
+    letter-spacing: 0;
+  }
+
+  .map-page img {
+    min-height: 590px;
+  }
+
+  .search-navigation {
+    padding: 0 18px;
+  }
+
+  .search-navigation button {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .search-navigation p {
+    font-size: 0.75rem;
+  }
+}
+
+/* =========================================
+   PRINT — A4 PORTRAIT
+   One charm page followed by one map page
+   ========================================= */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 210mm;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .site-header,
+  .intro-section,
+  .tools,
+  .search-navigation,
+  .end-note {
+    display: none !important;
+  }
+
+  #entries {
+    display: block;
+    width: 210mm;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .book-spread {
+    display: block;
+    width: 210mm;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: #ffffff;
+    box-shadow: none;
+  }
+
+  .book-spread::before {
+    display: none;
+  }
+
+  .charm-page,
+  .map-page {
+    display: flex;
+    width: 210mm;
+    height: 297mm;
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .charm-page {
+    flex-direction: column;
+    padding: 15mm 17mm 12mm;
+    background: #ffffff;
+  }
+
+  .charm-topline {
+    font-size: 8pt;
+  }
+
+  .charm-entry {
+    padding: 12mm 0 8mm;
+  }
+
+  .charm-heading {
+    flex-direction: row;
+    gap: 8mm;
+    margin-bottom: 9mm;
+  }
+
+  .charm-icon {
+    flex: 0 0 28mm;
+    width: 28mm;
+    height: 28mm;
+    padding: 1mm;
+  }
+
+  .charm-title {
+    font-size: 29pt;
+  }
+
+  .charm-cost {
+    font-size: 8pt;
+  }
+
+  .charm-effect {
+    margin-bottom: 6mm;
+    padding: 5mm 0;
+    font-size: 12pt;
+    line-height: 1.55;
+  }
+
+  .field-section {
+    margin-bottom: 6mm;
+    font-size: 10.5pt;
+    line-height: 1.55;
+  }
+
+  .field-section h3 {
+    font-size: 12pt;
+  }
+
+  .field-section p {
+    margin-top: 2mm;
+  }
+
+  .field-tags {
+    margin-top: 3mm;
+  }
+
+  .tag {
+    font-size: 8pt;
+  }
+
+  .field-note {
+    font-size: 9pt;
+  }
+
+  .page-footer {
+    margin-top: 5mm;
+    font-size: 8pt;
+  }
+
+  .map-page {
+    display: block;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .map-page img {
+    display: block;
+    width: 210mm;
+    height: 297mm;
+    min-height: 0;
+    border: none;
+    object-fit: contain;
+  }
+}
