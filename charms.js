@@ -77,6 +77,7 @@ const charms = [
   {
     name: "Soul Eater",
     cost: 4,
+    img: "images/charms/soul-eater.jpg",
     area: "Resting Grounds",
     effect: "Greatly increases SOUL gained from Nail hits.",
     prerequisites: "Desolate Dive or Descending Dark.",
@@ -87,6 +88,7 @@ const charms = [
   {
     name: "Dashmaster",
     cost: 2,
+    img: "images/charms/dashmaster.jpg",
     area: "Fungal Wastes",
     effect: "Allows downward dashing and reduces the dash cooldown.",
     prerequisites: "Access to the lower Fungal Wastes.",
@@ -97,6 +99,7 @@ const charms = [
   {
     name: "Sprintmaster",
     cost: 1,
+    img: "images/charms/sprintmaster.jpg",
     area: "Dirtmouth",
     effect: "Increases the Knight's running speed.",
     prerequisites: "Return the Shopkeeper's Key to Sly.",
@@ -107,6 +110,7 @@ const charms = [
   {
     name: "Grubsong",
     cost: 1,
+    img: "images/charms/grubsong.jpg",
     area: "Forgotten Crossroads",
     effect: "Grants SOUL when the Knight takes damage.",
     prerequisites: "Rescue ten Grubs.",
@@ -117,6 +121,7 @@ const charms = [
   {
     name: "Grubberfly's Elegy",
     cost: 3,
+    img: "images/charms/grubberflys-elegy.jpg",
     area: "Forgotten Crossroads",
     effect: "Fires a ranged Nail beam while the Knight is at full health.",
     prerequisites: "Rescue all 46 Grubs.",
@@ -127,6 +132,7 @@ const charms = [
   {
     name: "Fragile Heart",
     cost: 2,
+    img: "images/charms/fragile-heart.jpg",
     area: "Fungal Wastes",
     effect: "Adds two Masks. Breaks if the Knight dies while carrying it.",
     prerequisites: "Enough Geo to purchase it.",
@@ -137,6 +143,7 @@ const charms = [
   {
     name: "Unbreakable Heart",
     cost: 2,
+    img: "images/charms/unbreakable-heart.jpg",
     area: "Dirtmouth",
     effect: "Adds two Masks and never breaks on death.",
     prerequisites: "Fragile Heart and the Grimm Troupe quest.",
@@ -147,6 +154,7 @@ const charms = [
   {
     name: "Fragile Greed",
     cost: 2,
+    img: "images/charms/fragile-greed.jpg",
     area: "Fungal Wastes",
     effect: "Increases Geo obtained from enemies. Breaks on death.",
     prerequisites: "Enough Geo to purchase it.",
@@ -157,6 +165,7 @@ const charms = [
   {
     name: "Unbreakable Greed",
     cost: 2,
+    img: "images/charms/unbreakable-greed.jpg",
     area: "Dirtmouth",
     effect: "Increases Geo obtained from enemies and cannot break.",
     prerequisites: "Fragile Greed and the Grimm Troupe quest.",
@@ -167,6 +176,7 @@ const charms = [
   {
     name: "Fragile Strength",
     cost: 3,
+    img: "images/charms/fragile-strength.jpg",
     area: "Fungal Wastes",
     effect: "Increases Nail damage by 50%. Breaks on death.",
     prerequisites: "Enough Geo to purchase it.",
@@ -177,6 +187,7 @@ const charms = [
   {
     name: "Unbreakable Strength",
     cost: 3,
+    img: "images/charms/unbreakable-strength.jpg",
     area: "Dirtmouth",
     effect: "Increases Nail damage by 50% and never breaks.",
     prerequisites: "Fragile Strength and the Grimm Troupe quest.",
@@ -187,6 +198,7 @@ const charms = [
   {
     name: "Spell Twister",
     cost: 2,
+    img: "images/charms/spell-twister.jpg",
     area: "City of Tears",
     effect: "Reduces the SOUL cost of casting spells.",
     prerequisites: "Access to the Soul Sanctum.",
@@ -197,6 +209,7 @@ const charms = [
   {
     name: "Steady Body",
     cost: 1,
+    img: "images/charms/steady-body.jpg",
     area: "Forgotten Crossroads",
     effect: "Removes backward recoil when striking enemies with the Nail.",
     prerequisites: "Reach Salubra.",
@@ -207,6 +220,7 @@ const charms = [
   {
     name: "Heavy Blow",
     cost: 2,
+    img: "images/charms/heavy-blow.jpg",
     area: "Dirtmouth",
     effect: "Increases Nail knockback and changes some enemy stagger interactions.",
     prerequisites: "Return the Shopkeeper's Key to Sly.",
@@ -217,6 +231,7 @@ const charms = [
   {
     name: "Quick Slash",
     cost: 3,
+    img: "images/charms/quick-slash.jpg",
     area: "Kingdom's Edge",
     effect: "Allows the Knight to swing the Nail much faster.",
     prerequisites: "Reach Kingdom's Edge.",
@@ -227,6 +242,7 @@ const charms = [
   {
     name: "Longnail",
     cost: 2,
+    img: "images/charms/longnail.jpg",
     area: "Forgotten Crossroads",
     effect: "Increases Nail range.",
     prerequisites: "Reach Salubra.",
@@ -237,6 +253,7 @@ const charms = [
   {
     name: "Mark of Pride",
     cost: 3,
+    img: "images/charms/mark-of-pride.jpg",
     area: "Fungal Wastes",
     effect: "Greatly increases Nail range.",
     prerequisites: "Defeat the Mantis Lords to open the relevant route.",
@@ -247,6 +264,7 @@ const charms = [
   {
     name: "Fury of the Fallen",
     cost: 2,
+    img: "images/charms/fury-of-the-fallen.jpg",
     area: "King's Pass",
     effect: "Increases Nail damage when only one Mask remains.",
     prerequisites: "Return to King's Pass and navigate its hazards.",
@@ -257,6 +275,7 @@ const charms = [
   {
     name: "Thorns of Agony",
     cost: 1,
+    img: "images/charms/thorns-of-agony.jpg",
     area: "Greenpath",
     effect: "Creates damaging thorns around the Knight after taking damage.",
     prerequisites: "Careful platforming through the thorn maze.",
@@ -267,6 +286,7 @@ const charms = [
   {
     name: "Baldur Shell",
     cost: 2,
+    img: "images/charms/baldur-shell.jpg",
     area: "Howling Cliffs",
     effect: "Creates a protective shell while focusing. The shell can break after absorbing hits.",
     prerequisites: "Access to Howling Cliffs.",
@@ -277,6 +297,7 @@ const charms = [
   {
     name: "Flukenest",
     cost: 3,
+    img: "images/charms/flukenest.jpg",
     area: "Royal Waterways",
     effect: "Changes Vengeful Spirit and Shade Soul into a cluster of volatile flukes.",
     prerequisites: "Access to the Royal Waterways.",
@@ -287,6 +308,7 @@ const charms = [
   {
     name: "Defender's Crest",
     cost: 1,
+    img: "images/charms/defenders-crest.jpg",
     area: "Royal Waterways",
     effect: "Emits a damaging cloud around the Knight.",
     prerequisites: "Defeat Dung Defender.",
@@ -297,6 +319,7 @@ const charms = [
   {
     name: "Glowing Womb",
     cost: 2,
+    img: "images/charms/glowing-womb.jpg",
     area: "Forgotten Crossroads",
     effect: "Spends SOUL to create hatchlings that attack nearby enemies.",
     prerequisites: "Crystal Heart is needed to cross the relevant long gap.",
@@ -307,6 +330,7 @@ const charms = [
   {
     name: "Quick Focus",
     cost: 3,
+    img: "images/charms/quick-focus.jpg",
     area: "Forgotten Crossroads",
     effect: "Allows healing Focus to complete more quickly.",
     prerequisites: "Reach Salubra.",
@@ -317,6 +341,7 @@ const charms = [
   {
     name: "Deep Focus",
     cost: 4,
+    img: "images/charms/deep-focus.jpg",
     area: "Crystal Peak",
     effect: "Heals two Masks per Focus, but takes longer to complete.",
     prerequisites: "Crystal Heart and careful platforming.",
@@ -327,6 +352,7 @@ const charms = [
   {
     name: "Lifeblood Heart",
     cost: 2,
+    img: "images/charms/lifeblood-heart.jpg",
     area: "Forgotten Crossroads",
     effect: "Provides two temporary blue Lifeblood Masks when resting at a Bench.",
     prerequisites: "Reach Salubra.",
@@ -337,6 +363,7 @@ const charms = [
   {
     name: "Lifeblood Core",
     cost: 3,
+    img: "images/charms/lifeblood-core.jpg",
     area: "The Abyss",
     effect: "Provides four temporary blue Lifeblood Masks when resting at a Bench.",
     prerequisites: "Meet the blue Lifeblood door's mask requirement.",
@@ -347,6 +374,7 @@ const charms = [
   {
     name: "Joni's Blessing",
     cost: 4,
+    img: "images/charms/jonis-blessing.jpg",
     area: "Howling Cliffs",
     effect: "Converts health into blue Lifeblood Masks but prevents healing with Focus.",
     prerequisites: "Access to Howling Cliffs.",
@@ -357,6 +385,7 @@ const charms = [
   {
     name: "Hiveblood",
     cost: 4,
+    img: "images/charms/hiveblood.jpg",
     area: "The Hive",
     effect: "Regenerates the last lost Mask after a period without taking damage.",
     prerequisites: "Access to the Hive and its boss arena.",
@@ -367,6 +396,7 @@ const charms = [
   {
     name: "Spore Shroom",
     cost: 1,
+    img: "images/charms/spore-shroom.jpg",
     area: "Fungal Wastes",
     effect: "Releases a damaging spore cloud while focusing.",
     prerequisites: "Access to the western Fungal Wastes.",
@@ -377,6 +407,7 @@ const charms = [
   {
     name: "Sharp Shadow",
     cost: 2,
+    img: "images/charms/sharp-shadow.jpg",
     area: "Deepnest",
     effect: "Damages enemies passed through during Shade Cloak dashes and slightly extends the dash.",
     prerequisites: "Shade Cloak.",
@@ -387,6 +418,7 @@ const charms = [
   {
     name: "Shape of Unn",
     cost: 2,
+    img: "images/charms/shape-of-unn.jpg",
     area: "Greenpath",
     effect: "Allows movement in a slug-like form while focusing, helping dodge attacks.",
     prerequisites: "Isma's Tear for the acid route.",
@@ -397,6 +429,7 @@ const charms = [
   {
     name: "Nailmaster's Glory",
     cost: 1,
+    img: "images/charms/nailmasters-glory.jpg",
     area: "Dirtmouth",
     effect: "Reduces the time needed to charge Nail Arts.",
     prerequisites: "Learn all three Nail Arts.",
@@ -407,6 +440,7 @@ const charms = [
   {
     name: "Weaversong",
     cost: 2,
+    img: "images/charms/weaversong.jpg",
     area: "Deepnest",
     effect: "Summons small weaverlings that follow the Knight and attack enemies.",
     prerequisites: "Reach the Weavers' Den.",
@@ -417,6 +451,7 @@ const charms = [
   {
     name: "Dream Wielder",
     cost: 1,
+    img: "images/charms/dream-wielder.jpg",
     area: "Resting Grounds",
     effect: "Charges the Dream Nail faster and increases SOUL gained from Dream Nail strikes.",
     prerequisites: "Collect 500 Essence.",
@@ -427,6 +462,7 @@ const charms = [
   {
     name: "Dreamshield",
     cost: 3,
+    img: "images/charms/dreamshield.jpg",
     area: "Resting Grounds",
     effect: "Creates a rotating shield that can block certain attacks and damage enemies.",
     prerequisites: "Explore the chamber near the Seer.",
@@ -437,6 +473,7 @@ const charms = [
   {
     name: "Grimmchild",
     cost: 2,
+    img: "images/charms/grimmchild.jpg",
     area: "Dirtmouth",
     effect: "Summons Grimmchild, which attacks after the Knight collects flames for the troupe.",
     prerequisites: "Begin the Grimm Troupe ritual.",
@@ -447,6 +484,7 @@ const charms = [
   {
     name: "Carefree Melody",
     cost: 3,
+    img: "images/charms/carefree-melody.jpg",
     area: "Dirtmouth",
     effect: "Builds a chance to negate damage through repeated hits.",
     prerequisites: "Choose the Grimm Troupe banishment route.",
@@ -457,6 +495,7 @@ const charms = [
   {
     name: "Kingsoul",
     cost: 5,
+    img: "images/charms/kingsoul.jpg",
     area: "Queen's Gardens and White Palace",
     effect: "Slowly generates SOUL and opens the path to the Birthplace when equipped.",
     prerequisites: "Obtain both halves of the charm.",
@@ -467,6 +506,7 @@ const charms = [
   {
     name: "Void Heart",
     cost: 0,
+    img: "images/charms/void-heart.jpg",
     area: "The Abyss",
     effect: "Unifies the Void, changes certain endings and cannot be unequipped. Replaces Kingsoul.",
     prerequisites: "Kingsoul and the Awoken Dream Nail.",
