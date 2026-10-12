@@ -22,6 +22,7 @@ const charms = [
   {
     name: "Wayward Compass",
     cost: 1,
+    img: "images/charms/wayward-compass.jpg",
     area: "Dirtmouth",
     effect: "Displays the Knight's position on the map.",
     prerequisites: "A map of the relevant area.",
@@ -32,6 +33,7 @@ const charms = [
   {
     name: "Gathering Swarm",
     cost: 1,
+    img: "images/charms/gathering-swarm.jpg",
     area: "Dirtmouth",
     effect: "A swarm collects loose Geo dropped nearby.",
     prerequisites: "Rescue Sly from the Forgotten Crossroads.",
@@ -41,6 +43,7 @@ const charms = [
   },
   {
     name: "Stalwart Shell",
+    img: "images/charms/stalwart-shell.jpg",
     cost: 2,
     area: "Dirtmouth",
     effect: "Extends the period of invulnerability after taking damage.",
@@ -52,6 +55,7 @@ const charms = [
   {
     name: "Soul Catcher",
     cost: 2,
+    img: "images/charms/soul-catcher.jpg",
     area: "Forgotten Crossroads",
     effect: "Increases the SOUL gained from Nail hits.",
     prerequisites: "Access to the Ancestral Mound.",
@@ -61,6 +65,7 @@ const charms = [
   },
   {
     name: "Shaman Stone",
+    img: "images/charms/shaman-stone.jpg",
     cost: 3,
     area: "Forgotten Crossroads",
     effect: "Increases spell damage and enlarges certain spell projectiles.",
@@ -552,7 +557,7 @@ function makeCharmPage(charm, number) {
   icon.className = "charm-icon";
 
   // Intentionally blank: add your own icon path later.
-  icon.src = "";
+  icon.src = charm.img;
   icon.alt = charm.name + " charm icon";
 
   const titleBlock = document.createElement("div");
